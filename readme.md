@@ -8,7 +8,7 @@
 A Laravel Wrapper for the SoundCloud REST API endpoints.
 
 ## Installation
-First, you need to add the component to your composer.json
+First, you need to add the component to your composer.json.
 ```
 composer require noweh/laravel-soundcloud
 ```
@@ -37,9 +37,9 @@ Next, you must migrate config :
 
 ## Usage
 
-⚠️ Since [July 2021](https://developers.soundcloud.com/blog/security-updates-api), most calls to Soundcloud REST API requires an `access_token`.
+⚠️ Since [July 2021](https://developers.soundcloud.com/blog/security-updates-api), most calls to SoundCloud REST API requires an `access_token`.
 
-You have to redirect the user to the soundcloud login page:
+You have to redirect the user to the SoundCloud login page:
 ```
 return redirect(\Soundcloud::getAuthorizeUrl('a_custom_param_to_retrieve_in_callback'));
 ```
