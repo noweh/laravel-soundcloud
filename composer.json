@@ -1,0 +1,36 @@
+{
+  "name": "noweh/laravel-soundcloud",
+  "description": "Soundcloud API Wrapper for Laravel.",
+  "keywords": [
+    "Laravel",
+    "SoundCloud",
+    "API"
+  ],
+  "require": {
+    "ext-curl": "*",
+    "ext-json": "*",
+    "php": ">=7.3",
+    "laravel/framework": "^5 || ^6"
+  },
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Julien Schmitt",
+      "email": "jschmitt95@protonmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Noweh\\SoundcloudApi\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Noweh\\SoundcloudApi\\SoundcloudServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev"
+}
