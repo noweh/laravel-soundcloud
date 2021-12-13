@@ -24,8 +24,8 @@ class SoundcloudServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('soundcloud', function() {
-        	return new Soundcloud();
-		});
+        $this->app->bind('soundcloud', function () {
+            return new Soundcloud();
+        });
     }
 }

@@ -64,7 +64,7 @@ class Soundcloud
     public function __construct()
     {
         if (!Config::has('soundcloud.client_id') || !Config::has('soundcloud.client_secret')) {
-            throw new InvalidArgumentException('clientId and clientSecret must be set in config file');
+            throw new InvalidArgumentException('client_id and client_secret must be set in config file');
         }
         $this->_clientId = Config::get('soundcloud.client_id');
         $this->_clientSecret = Config::get('soundcloud.client_secret');
