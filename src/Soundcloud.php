@@ -338,18 +338,14 @@ class Soundcloud
 
         curl_setopt_array($ch, $options);
 
-        // to remove
-        curl_setopt($ch, CURLOPT_VERBOSE, true);
-        curl_setopt($ch,CURLINFO_HEADER_OUT,true);
-
         $data = curl_exec($ch);
         $info = curl_getinfo($ch);
+        $error = curl_error($ch);
 
-        curl_close($ch);
-
-        if ($info['http_code'] >= 400) {
+        if ($info['http_code'] !== 200) {
+            $errorMessage = $data ?? $error;
             throw new RuntimeException(
-                $data, $info['http_code']
+                $data ? : $error, $info['http_code']
             );
         }
 
