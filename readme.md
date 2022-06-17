@@ -90,6 +90,26 @@ try {
 }
 ```
 
+### GET with pagination
+
+Most results from our API are returned as a collection. The number of items in the collection returned is limited to 50 by default with a maximum value of 200. Most endpoints support a linked_partitioning parameter that allows you to page through collections. When this parameter is passed, the response will contain a next_href property if there are additional results. To fetch the next page of results, simply follow that URI. If the response does not contain a next_href property, you have reached the end of the results.
+
+```
+try {
+    $tracks = [];
+    $params = ['linked_partitioning' => true, 'limit' => 100 ];
+    $response = \Soundcloud::get('users/{CLIENT_ID}/tracks', $params);
+    while (property_exists($response, 'next_href') && !empty($response->next_href)) {
+		$tracks = array_merge($tracks,$response->collection);
+		$response =  BaseSoundCloud::get($response->next_href);
+	}
+    $tracks = array_merge($tracks,$response->collection);
+} catch (Exit $e) {
+    exit($e->getMessage());
+}
+```
+
+
 ### POST
 ```
 try {
