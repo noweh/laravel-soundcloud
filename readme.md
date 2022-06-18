@@ -58,7 +58,7 @@ If you want to use API calls in another page, you have to set manually this data
 
 
 ### Get Player Embed
-###This call doest not requires an access_token.
+#### This call doest not requires an access_token.
 
 To retrieve the widget embed code for any SoundCloud URL pointing to a user, set, or a playlist, do the following:
 ```
@@ -100,15 +100,14 @@ try {
     $params = ['linked_partitioning' => true, 'limit' => 100 ];
     $response = \Soundcloud::get('users/{CLIENT_ID}/tracks', $params);
     while (property_exists($response, 'next_href') && !empty($response->next_href)) {
-		$tracks = array_merge($tracks,$response->collection);
-		$response =  BaseSoundCloud::get($response->next_href);
-	}
+        $tracks = array_merge($tracks,$response->collection);
+        $response =  BaseSoundCloud::get($response->next_href);
+    }
     $tracks = array_merge($tracks,$response->collection);
 } catch (Exit $e) {
     exit($e->getMessage());
 }
 ```
-
 
 ### POST
 ```
