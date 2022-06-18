@@ -101,9 +101,8 @@ try {
     $response = \Soundcloud::get('users/{CLIENT_ID}/tracks', $params);
     while (property_exists($response, 'next_href') && !empty($response->next_href)) {
         $tracks = array_merge($tracks,$response->collection);
-        $response =  BaseSoundCloud::get($response->next_href);
+        $response = \Soundcloud::get($response->next_href);
     }
-    $tracks = array_merge($tracks,$response->collection);
 } catch (Exit $e) {
     exit($e->getMessage());
 }
