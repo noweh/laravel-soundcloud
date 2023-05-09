@@ -1,7 +1,7 @@
 # SoundCloud API for Laravel
 
 ![SoundCloud](https://img.shields.io/static/v1?style=flat-square&message=SoundCloud&color=FF3300&logo=SoundCloud&logoColor=FFFFFF&label=)
-![Laravel](https://img.shields.io/badge/Laravel-v5/6/7/8-828cb7.svg?style=flat-square&logo=Laravel&color=FF2D20)
+![Laravel](https://img.shields.io/badge/Laravel-v5/6/7/8/9-828cb7.svg?style=flat-square&logo=Laravel&color=FF2D20)
 ![PHP](https://img.shields.io/badge/PHP-v7.3-828cb7.svg?style=flat-square&logo=php)
 [![MIT Licensed](https://img.shields.io/github/license/noweh/laravel-soundcloud)](licence.md)
 [![last version](https://img.shields.io/packagist/v/noweh/laravel-soundcloud)](https://packagist.org/packages/noweh/laravel-soundcloud)
